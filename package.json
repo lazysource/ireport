@@ -1,0 +1,22 @@
+{
+  "name": "ireport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazysource/ireport.git"
+  },
+  "author": "Manraj Singh <manrajsinghgrover@gmail.com> (http://manrajsingh.in)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lazysource/ireport/issues"
+  },
+  "homepage": "https://github.com/lazysource/ireport#readme",
+  "devDependencies": {
+    "electron-prebuilt": "1.2.5"
+  }
+}
