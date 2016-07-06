@@ -1,7 +1,7 @@
 {
   "name": "ireport",
   "version": "1.0.0",
-  "description": "",
+  "description": "An electron app for awesome reporting of your source code quality",
   "main": "index.js",
   "scripts": {
     "start": "electron ."
