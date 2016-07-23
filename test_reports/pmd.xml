@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.1.1" timestamp="2016-07-23T22:36:19.487">
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/data/loader/rest/post/DataTablesRegistrationLoader.java">
+<violation beginline="145" endline="145" begincolumn="52" endcolumn="64" rule="StringToString" ruleset="String and StringBuffer" package="eu.musoni.musoni.data.loader.rest.post" class="DataTablesRegistrationLoader" method="failure" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/strings.html#StringToString" priority="3">
+Avoid calling toString() on String objects; this is unnecessary.
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/fragment/pending/PendingFragment.java">
+<violation beginline="146" endline="146" begincolumn="30" endcolumn="63" rule="UnnecessaryFullyQualifiedName" ruleset="Import Statements" package="eu.musoni.musoni.fragment.pending" class="PendingFragment" method="viewImage" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/imports.html#UnnecessaryFullyQualifiedName" priority="4">
+Unnecessary use of fully qualified name 'android.content.Intent.ACTION_VIEW' due to existing import 'android.content.Intent'
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/manager/DataLoadersManager.java">
+<violation beginline="26" endline="26" begincolumn="13" endcolumn="31" rule="AvoidFieldNameMatchingMethodName" ruleset="Naming" package="eu.musoni.musoni.manager" class="DataLoadersManager" variable="isComplete" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingMethodName" priority="3">
+Field isComplete has the same name as a method
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/manager/DataTableViewsManager.java">
+<violation beginline="286" endline="286" begincolumn="25" endcolumn="93" rule="IfElseStmtsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.manager" class="DataTableViewsManager" method="inflateDataToView" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+<violation beginline="547" endline="583" begincolumn="27" endcolumn="9" rule="IfElseStmtsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.manager" class="DataTableViewsManager" method="getValueFromView" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/Signature.java">
+<violation beginline="10" endline="10" begincolumn="13" endcolumn="29" rule="AvoidFieldNameMatchingTypeName" ruleset="Naming" package="eu.musoni.musoni.model" class="Signature" variable="signature" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingTypeName" priority="3">
+It is somewhat confusing to have a field name matching the declaring class name
+</violation>
+<violation beginline="11" endline="11" begincolumn="13" endcolumn="36" rule="AvoidFieldNameMatchingMethodName" ruleset="Naming" package="eu.musoni.musoni.model" class="Signature" variable="isDrawn" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingMethodName" priority="3">
+Field isDrawn has the same name as a method
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/get/Genders.java">
+<violation beginline="13" endline="13" begincolumn="13" endcolumn="33" rule="AvoidFieldNameMatchingTypeName" ruleset="Naming" package="eu.musoni.musoni.model.get" class="Genders" variable="genders" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingTypeName" priority="3">
+It is somewhat confusing to have a field name matching the declaring class name
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/get/Identifier.java">
+<violation beginline="11" endline="11" begincolumn="13" endcolumn="32" rule="AvoidFieldNameMatchingMethodName" ruleset="Naming" package="eu.musoni.musoni.model.get" class="Identifier" variable="isMandatory" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingMethodName" priority="3">
+Field isMandatory has the same name as a method
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/get/Identifiers.java">
+<violation beginline="13" endline="13" begincolumn="13" endcolumn="41" rule="AvoidFieldNameMatchingTypeName" ruleset="Naming" package="eu.musoni.musoni.model.get" class="Identifiers" variable="identifiers" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingTypeName" priority="3">
+It is somewhat confusing to have a field name matching the declaring class name
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/get/ReportParameters.java">
+<violation beginline="13" endline="13" begincolumn="13" endcolumn="51" rule="AvoidFieldNameMatchingTypeName" ruleset="Naming" package="eu.musoni.musoni.model.get" class="ReportParameters" variable="reportParameters" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingTypeName" priority="3">
+It is somewhat confusing to have a field name matching the declaring class name
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/get/Staff.java">
+<violation beginline="13" endline="13" begincolumn="13" endcolumn="34" rule="AvoidFieldNameMatchingMethodName" ruleset="Naming" package="eu.musoni.musoni.model.get" class="Staff" variable="isLoanOfficer" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingMethodName" priority="3">
+Field isLoanOfficer has the same name as a method
+</violation>
+<violation beginline="14" endline="14" begincolumn="13" endcolumn="29" rule="AvoidFieldNameMatchingMethodName" ruleset="Naming" package="eu.musoni.musoni.model.get" class="Staff" variable="isActive" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingMethodName" priority="3">
+Field isActive has the same name as a method
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/get/datatable/ColumnValue.java">
+<violation beginline="81" endline="81" begincolumn="13" endcolumn="22" rule="IfElseStmtsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.model.get.datatable" class="ColumnValue" method="compareTo" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+<violation beginline="83" endline="83" begincolumn="13" endcolumn="23" rule="IfElseStmtsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.model.get.datatable" class="ColumnValue" method="compareTo" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/post/Auth.java">
+<violation beginline="16" endline="16" begincolumn="13" endcolumn="30" rule="AvoidFieldNameMatchingMethodName" ruleset="Naming" package="eu.musoni.musoni.model.post" class="Auth" variable="isOffline" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingMethodName" priority="3">
+Field isOffline has the same name as a method
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/post/LoanRepaymentCalculationPost.java">
+<violation beginline="349" endline="349" begincolumn="21" endcolumn="35" rule="AvoidFieldNameMatchingTypeName" ruleset="Naming" package="eu.musoni.musoni.model.post" class="LoanRepaymentCalculationPost$Response$Period" variable="period" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingTypeName" priority="3">
+It is somewhat confusing to have a field name matching the declaring class name
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/registration/CreateClientContainer.java">
+<violation beginline="24" endline="24" begincolumn="13" endcolumn="36" rule="AvoidFieldNameMatchingMethodName" ruleset="Naming" package="eu.musoni.musoni.model.registration" class="CreateClientContainer" variable="isGroupSelected" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingMethodName" priority="3">
+Field isGroupSelected has the same name as a method
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/sync/AuthenticatorService.java">
+<violation beginline="15" endline="17" begincolumn="28" endcolumn="5" rule="CallSuperFirst" ruleset="Android" package="eu.musoni.musoni.sync" class="AuthenticatorService" method="onCreate" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/android.html#CallSuperFirst" priority="3">
+super should be called at the start of the method
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/sync/MusoniSyncService.java">
+<violation beginline="16" endline="22" begincolumn="28" endcolumn="5" rule="CallSuperFirst" ruleset="Android" package="eu.musoni.musoni.sync" class="MusoniSyncService" method="onCreate" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/android.html#CallSuperFirst" priority="3">
+super should be called at the start of the method
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/util/ErrorMessageHandler.java">
+<violation beginline="11" endline="11" begincolumn="13" endcolumn="28" rule="AvoidFieldNameMatchingMethodName" ruleset="Naming" package="eu.musoni.musoni.util" class="ErrorMessageHandler" variable="isError" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingMethodName" priority="3">
+Field isError has the same name as a method
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/util/NumberTextWatcher.java">
+<violation beginline="46" endline="47" begincolumn="17" endcolumn="46" rule="WhileLoopsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.util" class="NumberTextWatcher" method="afterTextChanged" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#WhileLoopsMustUseBraces" priority="3">
+Avoid using while statements without curly braces
+</violation>
+<violation beginline="77" endline="77" begincolumn="21" endcolumn="40" rule="IfElseStmtsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.util" class="NumberTextWatcher" method="onTextChanged" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/util/Utils.java">
+<violation beginline="172" endline="172" begincolumn="26" endcolumn="59" rule="UnnecessaryFullyQualifiedName" ruleset="Import Statements" package="eu.musoni.musoni.util" class="Utils" method="getImageIntent" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/imports.html#UnnecessaryFullyQualifiedName" priority="4">
+Unnecessary use of fully qualified name 'android.content.Intent.ACTION_VIEW' due to existing import 'android.content.Intent'
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/validator/CreateLoanValidator.java">
+<violation beginline="185" endline="191" begincolumn="16" endcolumn="9" rule="IfElseStmtsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.validator" class="CreateLoanValidator" method="isValid" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+<violation beginline="198" endline="208" begincolumn="16" endcolumn="9" rule="IfElseStmtsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.validator" class="CreateLoanValidator" method="isValid" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/view/CheckBoxLayout.java">
+<violation beginline="89" endline="89" begincolumn="32" endcolumn="52" rule="InefficientStringBuffering" ruleset="String and StringBuffer" package="eu.musoni.musoni.view" class="CheckBoxLayout" method="refreshText" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/strings.html#InefficientStringBuffering" priority="3">
+Avoid concatenating nonliterals in a StringBuffer/StringBuilder constructor or append().
+</violation>
+<violation beginline="156" endline="156" begincolumn="32" endcolumn="66" rule="InefficientStringBuffering" ruleset="String and StringBuffer" package="eu.musoni.musoni.view" class="CheckBoxLayout" method="getCheckedState" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/strings.html#InefficientStringBuffering" priority="3">
+Avoid concatenating nonliterals in a StringBuffer/StringBuilder constructor or append().
+</violation>
+<violation beginline="164" endline="164" begincolumn="13" endcolumn="19" rule="IfElseStmtsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.view" class="CheckBoxLayout" method="bindChechedState" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+<violation beginline="166" endline="166" begincolumn="13" endcolumn="52" rule="IfElseStmtsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.view" class="CheckBoxLayout" method="bindChechedState" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+</file>
+</pmd>
