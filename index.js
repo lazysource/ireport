@@ -8,10 +8,14 @@
 'use strict';
 
 const electron = require('electron');
+
 const {
   app,
   BrowserWindow
 } = electron;
+
+var fs = require('fs'),
+    xml2js = require('xml2js');
 
 app.on('ready', function(){
   let win = new BrowserWindow({
@@ -19,4 +23,12 @@ app.on('ready', function(){
     height: 600
   });
   win.loadURL('file://' + __dirname + '/index.html');
+});
+
+var parser = new xml2js.Parser();
+fs.readFile('/Users/ishan/dev/code/android/mlite-tablet-app/app/build/reports/pmd/pmd.xml', function(err, data) {
+    parser.parseString(data, function (err, result) {
+        console.dir(JSON.stringify(result));
+        console.log('Done');
+    });
 });

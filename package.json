@@ -18,5 +18,8 @@
   "homepage": "https://github.com/lazysource/ireport#readme",
   "devDependencies": {
     "electron-prebuilt": "1.2.5"
+  },
+  "dependencies": {
+    "xml2js": "^0.4.17"
   }
 }
