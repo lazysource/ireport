@@ -2,7 +2,7 @@
 * @Author: Sahil Dua
 * @Date:   2016-07-06 03:15:00
 * @Last Modified by:   Sahil Dua
-* @Last Modified time: 2016-07-23 23:35:05
+* @Last Modified time: 2016-07-24 15:13:21
 */
 
 'use strict';
@@ -24,7 +24,7 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow({width: 980, height: 920})
 
   // and load the index.html of the app.
   mainWindow.loadURL('file://' + __dirname + '/index.html')

@@ -1,0 +1,28 @@
+/*
+* @Author: sahildua2305
+* @Date:   2016-07-24 15:15:09
+* @Last Modified by:   Sahil Dua
+* @Last Modified time: 2016-07-24 15:22:41
+*/
+
+
+#error-message-container #error-message table {
+  border-collapse:collapse;
+}
+
+#error-message-container #error-message table td {
+  word-break: break-all;
+  /*padding: 0.5%;*/
+}
+
+#error-message-container #error-message .error-class {
+  width: 20%;
+}
+
+#error-message-container #error-message .error-beginline {
+  width: 5%;
+}
+
+#error-message-container #error-message .error-desc {
+  width: 75%;
+}
