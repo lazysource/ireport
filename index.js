@@ -2,7 +2,7 @@
 * @Author: Sahil Dua
 * @Date:   2016-07-06 03:15:00
 * @Last Modified by:   Sahil Dua
-* @Last Modified time: 2016-07-24 15:13:21
+* @Last Modified time: 2016-07-24 16:33:36
 */
 
 'use strict';
@@ -71,4 +71,22 @@ exports.parseFile = function (path, callback) {
         callback(JSON.stringify(result));
       });
   });
+}
+
+exports.chooseFile = function (callback) {
+  var fileSelected = dialog.showOpenDialog({
+    title: 'Open local PMD generated report',
+    buttonLabel: 'Choose file',
+    properties: [
+      'openFile'
+    ],
+    filters: [
+      {
+        name: 'XML Report',
+        extensions: ['xml']
+      }
+    ]
+  });
+
+  return callback(fileSelected);
 }
