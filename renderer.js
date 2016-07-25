@@ -56,8 +56,11 @@ function getAllViolations(fileInfoList) {
 
       var fileName = fileInfoList[fi].$.name;
       var errorsInFile = fileInfoList[fi].violation;
-      for (var e in errorsInFile) {
-        var error = fileInfoList[e].violation[0];
+      console.log("File ======= " + fileName);
+      
+      for (var i=0; i<errorsInFile.length;i++) {
+        var error = errorsInFile[i];
+        console.log(error);
         var violation = new Violation(fileName, error.$.class, error.$.beginline, error._);
         violationsList.push(violation);
       } 
