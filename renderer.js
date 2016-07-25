@@ -17,8 +17,16 @@ var selectedFile = '';
 
 document.getElementById('chooseFile').addEventListener('click', _ => {
   mainProcess.chooseFile(function (fileName) {
-    console.log(fileName);
     selectedFile = fileName;
+    if (selectedFile) {
+      mainProcess.parseFile(selectedFile, function (data) {
+        var json_data = JSON.parse(data);
+        var files_info = json_data.pmd.file;
+        var violationsList = getAllViolations(files_info);
+        var violationsTable = getViolationsTable(violationsList);
+        document.getElementById('error-message-container').innerHTML = violationsTable;
+      }); 
+    }
   });
 });
 /**
@@ -30,20 +38,6 @@ function Violation(fileName, className, beginningLine, description) {
   this.beginningLine = beginningLine;
   this.description = description;
 }
-
-document.getElementById('parseFile').addEventListener('click', _ => {
-  if (selectedFile) {
-    mainProcess.parseFile(selectedFile, function (data) {
-      var json_data = JSON.parse(data);
-      var files_info = json_data.pmd.file;
-      var violationsList = getAllViolations(files_info);
-      var violationsTable = getViolationsTable(violationsList);
-      document.getElementById('error-message-container').innerHTML = violationsTable;
-    }); 
-  } else {
-    alert("No file selected");
-  }
-});
 
 /**
 * This method returns an Array of Violations.
