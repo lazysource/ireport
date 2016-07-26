@@ -1,8 +1,8 @@
 /*
 * @Author: sahildua2305
 * @Date:   2016-07-23 23:17:53
-* @Last Modified by:   Manraj Singh
-* @Last Modified time: 2016-07-26 08:07:15
+* @Last Modified by:   Sahil Dua
+* @Last Modified time: 2016-07-26 22:47:01
 */
 
 'use strict';
@@ -19,7 +19,7 @@ document.getElementById('chooseFile').addEventListener('click', _ => {
   mainProcess.chooseFile(function (fileName) {
     selectedFile = fileName;
     if (selectedFile) {
-      mainProcess.parseFile(selectedFile, function (data) {
+      mainProcess.parseFile(selectedFile[0], function (data) {
         let json_data = JSON.parse(data);
         let files_info = json_data.pmd.file;
         let violationsList = getAllViolations(files_info);

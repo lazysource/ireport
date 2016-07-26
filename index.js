@@ -1,8 +1,8 @@
 /*
 * @Author: Manraj Singh
 * @Date:   2016-07-06 03:15:00
-* @Last Modified by:   Manraj Singh
-* @Last Modified time: 2016-07-26 08:07:53
+* @Last Modified by:   Sahil Dua
+* @Last Modified time: 2016-07-26 22:46:51
 */
 
 'use strict';
@@ -66,7 +66,7 @@ app.on('activate', () => {
 let parser = new xml2js.Parser();
 
 exports.parseFile = (path, callback) => {
-  fs.readFile('./test_reports/pmd.xml', function(err, data) {
+  fs.readFile(path, function(err, data) {
       parser.parseString(data, function (err, result) {
         callback(JSON.stringify(result));
       });
