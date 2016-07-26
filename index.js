@@ -1,10 +1,3 @@
-/*
-* @Author: Manraj Singh
-* @Date:   2016-07-06 03:15:00
-* @Last Modified by:   Sahil Dua
-* @Last Modified time: 2016-07-26 22:48:57
-*/
-
 'use strict';
 
 const electron = require('electron');
