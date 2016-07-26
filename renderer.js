@@ -2,7 +2,7 @@
 * @Author: sahildua2305
 * @Date:   2016-07-23 23:17:53
 * @Last Modified by:   Manraj Singh
-* @Last Modified time: 2016-07-26 08:01:33
+* @Last Modified time: 2016-07-26 08:07:15
 */
 
 'use strict';
@@ -13,17 +13,17 @@ const electron = require('electron');
 const remote = electron.remote;
 const mainProcess = remote.require('./index');
 
-var selectedFile = '';
+let selectedFile = '';
 
 document.getElementById('chooseFile').addEventListener('click', _ => {
   mainProcess.chooseFile(function (fileName) {
     selectedFile = fileName;
     if (selectedFile) {
       mainProcess.parseFile(selectedFile, function (data) {
-        var json_data = JSON.parse(data);
-        var files_info = json_data.pmd.file;
-        var violationsList = getAllViolations(files_info);
-        var violationsTable = getViolationsTable(violationsList);
+        let json_data = JSON.parse(data);
+        let files_info = json_data.pmd.file;
+        let violationsList = getAllViolations(files_info);
+        let violationsTable = getViolationsTable(violationsList);
         document.getElementById('error-message-container').innerHTML = violationsTable;
       }); 
     }
@@ -46,18 +46,18 @@ class Violation {
 */
 const getAllViolations = (fileInfoList) => {
 
-  var violationsList = new Array();
+  let violationsList = new Array();
 
-  for (var fi in fileInfoList) {
+  for (let fi in fileInfoList) {
 
-      var fileName = fileInfoList[fi].$.name;
-      var errorsInFile = fileInfoList[fi].violation;
+      let fileName = fileInfoList[fi].$.name;
+      let errorsInFile = fileInfoList[fi].violation;
       console.log("File ======= " + fileName);
       
-      for (var i=0; i<errorsInFile.length;i++) {
-        var error = errorsInFile[i];
+      for (let i=0; i<errorsInFile.length;i++) {
+        let error = errorsInFile[i];
         console.log(error);
-        var violation = new Violation(fileName, error.$.class, error.$.beginline, error._);
+        let violation = new Violation(fileName, error.$.class, error.$.beginline, error._);
         violationsList.push(violation);
       } 
 
@@ -72,9 +72,9 @@ const getAllViolations = (fileInfoList) => {
   separate.
 */
 const getViolationsTable = (violationsList) => {
-    var html = '';
-    for (var i=0;i<violationsList.length;i++) {
-      var violation = violationsList[i];
+    let html = '';
+    for (let i=0;i<violationsList.length;i++) {
+      let violation = violationsList[i];
       html += '<div id="error-message">';
       html += '<h5>' + violation.fileName + '</h5>';
       html += '<table border="1" cellspacing="0" cellpadding="0"><tr><th>ClassName</th><th>Line Number</th><th>Error Message</th></tr>';

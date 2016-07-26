@@ -2,7 +2,7 @@
 * @Author: Manraj Singh
 * @Date:   2016-07-06 03:15:00
 * @Last Modified by:   Manraj Singh
-* @Last Modified time: 2016-07-26 07:57:32
+* @Last Modified time: 2016-07-26 08:07:53
 */
 
 'use strict';
@@ -15,8 +15,8 @@ const BrowserWindow = electron.BrowserWindow;
 
 const dialog = electron.dialog;
 
-var fs = require('fs');
-var xml2js = require('xml2js');
+let fs = require('fs');
+let xml2js = require('xml2js');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -63,7 +63,7 @@ app.on('activate', () => {
   }
 });
 
-var parser = new xml2js.Parser();
+let parser = new xml2js.Parser();
 
 exports.parseFile = (path, callback) => {
   fs.readFile('./test_reports/pmd.xml', function(err, data) {
@@ -74,7 +74,7 @@ exports.parseFile = (path, callback) => {
 }
 
 exports.chooseFile = (callback) => {
-  var fileSelected = dialog.showOpenDialog({
+  let fileSelected = dialog.showOpenDialog({
     title: 'Open local PMD generated report',
     buttonLabel: 'Choose file',
     properties: [
