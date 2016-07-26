@@ -10,6 +10,7 @@ const dialog = electron.dialog;
 
 let fs = require('fs');
 let xml2js = require('xml2js');
+let storage = require('electron-json-storage');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -60,11 +61,14 @@ let parser = new xml2js.Parser();
 
 exports.parseFile = (path, callback) => {
   fs.readFile(path, (err, data) => {
-      parser.parseString(data, (err, result) => {
-        callback(JSON.stringify(result));
-      });
+    if (err)
+      throw err;
+
+    parser.parseString(data, (err, result) => {
+      callback(JSON.stringify(result));
+    });
   });
-}
+};
 
 exports.chooseFile = (callback) => {
   let fileSelected = dialog.showOpenDialog({
@@ -81,5 +85,33 @@ exports.chooseFile = (callback) => {
     ]
   });
 
+  if (fileSelected) {
+    storage.set('lastOpenedFile', { path: fileSelected }, (error) => {
+      if (error)
+        throw error;
+    });
+  }
+
   return callback(fileSelected);
-}
+};
+
+exports.openLastFile = (callback) => {
+  // get key from storage
+  storage.get('lastOpenedFile', (error, data) => {
+    if (error)
+      throw error;
+
+    if (data.path) {
+      // TODO: This part of code below is being repeated in parseFile as well
+      // Remove the duplication once this feature is tested
+      fs.readFile(data.path[0], (err, data) => {
+        if (err)
+          throw err;
+
+        parser.parseString(data, (err, result) => {
+          callback(JSON.stringify(result));
+        });
+      });
+    }
+  });
+};

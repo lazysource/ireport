@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.1.1" timestamp="2016-07-23T22:36:19.487">
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/manager/DataLoadersManager.java">
+<violation beginline="26" endline="26" begincolumn="13" endcolumn="31" rule="AvoidFieldNameMatchingMethodName" ruleset="Naming" package="eu.musoni.musoni.manager" class="DataLoadersManager" variable="isComplete" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingMethodName" priority="3">
+Field isComplete has the same name as a method
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/get/Genders.java">
+<violation beginline="13" endline="13" begincolumn="13" endcolumn="33" rule="AvoidFieldNameMatchingTypeName" ruleset="Naming" package="eu.musoni.musoni.model.get" class="Genders" variable="genders" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingTypeName" priority="3">
+It is somewhat confusing to have a field name matching the declaring class name
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/model/get/Identifiers.java">
+<violation beginline="13" endline="13" begincolumn="13" endcolumn="41" rule="AvoidFieldNameMatchingTypeName" ruleset="Naming" package="eu.musoni.musoni.model.get" class="Identifiers" variable="identifiers" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/naming.html#AvoidFieldNameMatchingTypeName" priority="3">
+It is somewhat confusing to have a field name matching the declaring class name
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/util/Utils.java">
+<violation beginline="172" endline="172" begincolumn="26" endcolumn="59" rule="UnnecessaryFullyQualifiedName" ruleset="Import Statements" package="eu.musoni.musoni.util" class="Utils" method="getImageIntent" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/imports.html#UnnecessaryFullyQualifiedName" priority="4">
+Unnecessary use of fully qualified name 'android.content.Intent.ACTION_VIEW' due to existing import 'android.content.Intent'
+</violation>
+</file>
+<file name="/Users/ishan/dev/code/android/mlite-tablet-app/app/src/main/java/eu/musoni/musoni/validator/CreateLoanValidator.java">
+<violation beginline="185" endline="191" begincolumn="16" endcolumn="9" rule="IfElseStmtsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.validator" class="CreateLoanValidator" method="isValid" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+<violation beginline="198" endline="208" begincolumn="16" endcolumn="9" rule="IfElseStmtsMustUseBraces" ruleset="Braces" package="eu.musoni.musoni.validator" class="CreateLoanValidator" method="isValid" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.1.1/rules/java/braces.html#IfElseStmtsMustUseBraces" priority="3">
+Avoid using if...else statements without curly braces
+</violation>
+</file>
+</pmd>
