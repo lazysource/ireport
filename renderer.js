@@ -76,18 +76,19 @@ const getAllViolations = (fileInfoList) => {
 */
 const getViolationsTable = (violationsList) => {
     let html = '';
+    html += '<div id="error-message">';
+    html += '<table border="1" cellspacing="0" cellpadding="0"><tr><th>ClassName</th><th>Line Number</th><th>Error Message</th></tr>';
+    
     for (let i=0;i<violationsList.length;i++) {
       let violation = violationsList[i];
-      html += '<div id="error-message">';
-      html += '<h5>' + violation.fileName + '</h5>';
-      html += '<table border="1" cellspacing="0" cellpadding="0"><tr><th>ClassName</th><th>Line Number</th><th>Error Message</th></tr>';
       html += '<tr>';
       html += '<td class="error-class">' + violation.className + '</td>';
       html += '<td class="error-beginline">' + violation.beginningLine + '</td>';
       html += '<td class="error-desc">' + violation.description + '</td>';
       html += '</tr>';
-      html += '</table>';
-      html += '</div>';
     }
+
+    html += '</table>';
+    html += '</div>';
     return html;
 }
