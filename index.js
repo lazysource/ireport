@@ -59,7 +59,7 @@ app.on('activate', () => {
 
 let parser = new xml2js.Parser();
 
-exports.parseFile = (path, callback) => {
+const readAndParseFile = (path, callback) => {
   fs.readFile(path, (err, data) => {
     if (err)
       throw err;
@@ -86,6 +86,7 @@ exports.chooseFile = (callback) => {
   });
 
   if (fileSelected) {
+    // store this file path in local storage
     storage.set('lastOpenedFile', { path: fileSelected }, (error) => {
       if (error)
         throw error;
@@ -95,6 +96,10 @@ exports.chooseFile = (callback) => {
   return callback(fileSelected);
 };
 
+exports.parseFile = (path, callback) => {
+  readAndParseFile(path, callback);
+};
+
 exports.openLastFile = (callback) => {
   // get key from storage
   storage.get('lastOpenedFile', (error, data) => {
@@ -102,16 +107,7 @@ exports.openLastFile = (callback) => {
       throw error;
 
     if (data.path) {
-      // TODO: This part of code below is being repeated in parseFile as well
-      // Remove the duplication once this feature is tested
-      fs.readFile(data.path[0], (err, data) => {
-        if (err)
-          throw err;
-
-        parser.parseString(data, (err, result) => {
-          callback(JSON.stringify(result));
-        });
-      });
+      readAndParseFile(data.path[0], callback);
     }
   });
 };

@@ -6,16 +6,18 @@ const mainProcess = remote.require('./index');
 
 let selectedFile = '';
 
+const showViolationsFromData = (data) => {
+  let json_data = JSON.parse(data);
+  let files_info = json_data.pmd.file;
+  let violationsList = getAllViolations(files_info);
+  let violationsTable = getViolationsTable(violationsList);
+  document.getElementById('error-message-container').innerHTML = violationsTable;
+}
+
 window.onload = _ => {
   // call openLastFile
   mainProcess.openLastFile((data) => {
-
-    // TODO: Take out the code below to eliminate the duplicacy in the code
-    let json_data = JSON.parse(data);
-    let files_info = json_data.pmd.file;
-    let violationsList = getAllViolations(files_info);
-    let violationsTable = getViolationsTable(violationsList);
-    document.getElementById('error-message-container').innerHTML = violationsTable;
+    showViolationsFromData(data);
   });
 }
 
@@ -24,11 +26,7 @@ document.getElementById('chooseFile').addEventListener('click', _ => {
     selectedFile = fileName;
     if (selectedFile) {
       mainProcess.parseFile(selectedFile[0], (data) => {
-        let json_data = JSON.parse(data);
-        let files_info = json_data.pmd.file;
-        let violationsList = getAllViolations(files_info);
-        let violationsTable = getViolationsTable(violationsList);
-        document.getElementById('error-message-container').innerHTML = violationsTable;
+        showViolationsFromData(data);
       }); 
     }
   });
