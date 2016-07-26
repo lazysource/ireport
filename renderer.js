@@ -1,7 +1,7 @@
 'use strict';
 
 const electron = require('electron');
-const remote = electron.remote;
+const {remote} = electron;
 const mainProcess = remote.require('./index');
 
 let selectedFile = '';

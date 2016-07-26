@@ -1,16 +1,11 @@
 'use strict';
 
 const electron = require('electron');
-// Module to control application life.
-const app = electron.app;
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow;
+const {app, BrowserWindow, dialog} = electron;
 
-const dialog = electron.dialog;
-
-let fs = require('fs');
-let xml2js = require('xml2js');
-let storage = require('electron-json-storage');
+const fs = require('fs');
+const xml2js = require('xml2js');
+const storage = require('electron-json-storage');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
