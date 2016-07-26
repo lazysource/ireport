@@ -2,7 +2,7 @@
 * @Author: sahildua2305
 * @Date:   2016-07-23 23:17:53
 * @Last Modified by:   Sahil Dua
-* @Last Modified time: 2016-07-26 22:51:19
+* @Last Modified time: 2016-07-26 23:54:05
 */
 
 'use strict';
@@ -12,6 +12,19 @@ const remote = electron.remote;
 const mainProcess = remote.require('./index');
 
 let selectedFile = '';
+
+window.onload = _ => {
+  // call openLastFile
+  mainProcess.openLastFile((data) => {
+
+    // TODO: Take out the code below to eliminate the duplicacy in the code
+    let json_data = JSON.parse(data);
+    let files_info = json_data.pmd.file;
+    let violationsList = getAllViolations(files_info);
+    let violationsTable = getViolationsTable(violationsList);
+    document.getElementById('error-message-container').innerHTML = violationsTable;
+  });
+}
 
 document.getElementById('chooseFile').addEventListener('click', _ => {
   mainProcess.chooseFile((fileName) => {
