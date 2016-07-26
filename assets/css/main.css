@@ -1,3 +1,10 @@
+body {
+  font-family: monospace;
+  font-size: 10px;
+  color: #E9EFEC;
+  background: #282A36;
+}
+
 #error-message-container #error-message table {
   border-collapse:collapse;
 }
