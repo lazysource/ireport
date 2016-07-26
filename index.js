@@ -3,8 +3,6 @@
 const electron = require('electron');
 const {app, BrowserWindow, dialog} = electron;
 
-const dialog = electron.dialog;
-
 const fs = require('fs');
 const xml2js = require('xml2js');
 const storage = require('electron-json-storage');
