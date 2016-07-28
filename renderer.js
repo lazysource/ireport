@@ -8,6 +8,21 @@ let selectedFile = '';
 let fileInfoList = new Array();
 
 /*
+  Store information about the current sorting at any moment
+
+  E.g. If sortedBy.lineNumber is `true`, that means the list has already been sorted
+    by line number in ascending order. Hence if user clicks on lineNumber header again,
+    we will sort the list in descending order and set sortedBy.lineNumber `false`.
+    Now if, user clicks on the lineNumber header again, then the list will be sorted
+    in ascending order again.
+*/
+let sortedBy = {
+  className: false,
+  lineNumber: false,
+  description: false
+};
+
+/*
   Initialises the file Info list based on JSON Data parsed from the file read from the
   local system. This file instance is then saved for global access.
 */
@@ -27,8 +42,11 @@ const showViolationsTable = (violationsList) => {
   addAllSortingListeners();
 }
 
+/*
+  Gets triggered once the DOM is ready and all resources have been loaded. Calls `openLastFile`
+  from the exported functions and loads the content (JSON) returned in the callback.
+*/
 window.onload = _ => {
-  // call openLastFile
   mainProcess.openLastFile((data) => {
     initFileInfoFromData(data);
     let violationsList = getAllViolations();
@@ -36,6 +54,10 @@ window.onload = _ => {
   });
 }
 
+/*
+  Calls `chooseFile` first, and then calls `parseFile` from the exported functions to load
+  the content (JSON) returned in the callback.
+*/
 document.getElementById('chooseFile').addEventListener('click', _ => {
   mainProcess.chooseFile((fileName) => {
     selectedFile = fileName;
@@ -60,9 +82,27 @@ const addAllSortingListeners = _ => {
   document.getElementById('className').addEventListener('click', _ => {
     clearViolationsTable();
     let violationsList = getAllViolations();
-    violationsList.sort(function(a,b) {
-      return a.className.localeCompare(b.className);
-    });
+
+    /*
+      If sortedBy.className is `true`, that means we need to sort the list in descending order now.
+      Otherwise, sort the list in ascending order.
+    */
+    if (sortedBy.className) {
+      violationsList.sort(function(a,b) {
+        return b.className.localeCompare(a.className);
+      });
+    }
+    else {
+      violationsList.sort(function(a,b) {
+        return a.className.localeCompare(b.className);
+      });
+    }
+
+    /*
+      Toggle the flag sortedBy.className to make sure the list is sorted in opposite order next time.
+    */
+    sortedBy.className = !sortedBy.className;
+
     showViolationsTable(violationsList);
   });
   
@@ -72,9 +112,27 @@ const addAllSortingListeners = _ => {
   document.getElementById('lineNumber').addEventListener('click', _ => {
     clearViolationsTable();
     let violationsList = getAllViolations();
-    violationsList.sort(function(a,b) {
-      return a.beginningLine - b.beginningLine;
-    });
+
+    /*
+      If sortedBy.lineNumber is `true`, that means we need to sort the list in descending order now.
+      Otherwise, sort the list in ascending order.
+    */
+    if (sortedBy.lineNumber) {
+      violationsList.sort(function(a,b) {
+        return b.beginningLine - a.beginningLine;
+      });
+    }
+    else {
+      violationsList.sort(function(a,b) {
+        return a.beginningLine - b.beginningLine;
+      });
+    }
+
+    /*
+      Toggle the flag sortedBy.lineNumber to make sure the list is sorted in opposite order next time.
+    */
+    sortedBy.lineNumber = !sortedBy.lineNumber;
+
     showViolationsTable(violationsList);
   });
 
@@ -84,9 +142,26 @@ const addAllSortingListeners = _ => {
   document.getElementById('description').addEventListener('click', _ => {
     clearViolationsTable();
     let violationsList = getAllViolations();
-    violationsList.sort(function(a,b) {
-      return a.description.localeCompare(b.description);
-    });
+
+    /*
+      If sortedBy.description is `true`, that means we need to sort the list in descending order now.
+      Otherwise, sort the list in ascending order.
+    */
+    if (sortedBy.description) {
+      violationsList.sort(function(a,b) {
+        return b.description.localeCompare(a.description);
+      });
+    }
+    else {
+      violationsList.sort(function(a,b) {
+        return a.description.localeCompare(b.description);
+      });
+    }
+
+    /*
+      Toggle the flag sortedBy.description to make sure the list is sorted in opposite order next time.
+    */
+    sortedBy.description = !sortedBy.description;
     showViolationsTable(violationsList);
   });
 

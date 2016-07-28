@@ -54,6 +54,10 @@ app.on('activate', () => {
 
 let parser = new xml2js.Parser();
 
+/*
+  Reads file from the path given, throws error if there is any, while reading the file.
+  Parses the data read from the file and converts it into JSON
+*/
 const readAndParseFile = (path, callback) => {
   fs.readFile(path, (err, data) => {
     if (err)
@@ -65,6 +69,10 @@ const readAndParseFile = (path, callback) => {
   });
 };
 
+/*
+  Exports the function for selecting a file using dialog and returns the selected file path.
+  It also saves/updates the path in local storage to keep track of last file opened.
+*/
 exports.chooseFile = (callback) => {
   let fileSelected = dialog.showOpenDialog({
     title: 'Open local PMD generated report',
@@ -91,12 +99,21 @@ exports.chooseFile = (callback) => {
   return callback(fileSelected);
 };
 
+/*
+  Exports the function for parsing an XML file and returning JSON corresponding to the XML data
+*/
 exports.parseFile = (path, callback) => {
   readAndParseFile(path, callback);
 };
 
+/*
+  Exports the function which is called on `window.onload` from `renderer.js`.
+  Gets last opened file path from local storage and parses its contents to return JSON
+*/
 exports.openLastFile = (callback) => {
-  // get key from storage
+  /*
+    get key from storage
+  */
   storage.get('lastOpenedFile', (error, data) => {
     if (error)
       throw error;
