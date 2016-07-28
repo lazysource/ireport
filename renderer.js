@@ -87,16 +87,12 @@ const addAllSortingListeners = _ => {
       If sortedBy.className is `true`, that means we need to sort the list in descending order now.
       Otherwise, sort the list in ascending order.
     */
-    if (sortedBy.className) {
-      violationsList.sort(function(a,b) {
-        return b.className.localeCompare(a.className);
-      });
-    }
-    else {
-      violationsList.sort(function(a,b) {
-        return a.className.localeCompare(b.className);
-      });
-    }
+    let factor = sortedBy.className ? -1 : 1;
+
+    violationsList.sort(function(a,b) {
+      return b.className.localeCompare(a.className) * factor;
+    });
+    
 
     /*
       Toggle the flag sortedBy.className to make sure the list is sorted in opposite order next time.
@@ -117,16 +113,11 @@ const addAllSortingListeners = _ => {
       If sortedBy.lineNumber is `true`, that means we need to sort the list in descending order now.
       Otherwise, sort the list in ascending order.
     */
-    if (sortedBy.lineNumber) {
-      violationsList.sort(function(a,b) {
-        return b.beginningLine - a.beginningLine;
-      });
-    }
-    else {
-      violationsList.sort(function(a,b) {
-        return a.beginningLine - b.beginningLine;
-      });
-    }
+    let factor = sortedBy.lineNumber ? -1 : 1;
+
+    violationsList.sort(function(a,b) {
+      return (b.beginningLine - a.beginningLine) * factor;
+    });
 
     /*
       Toggle the flag sortedBy.lineNumber to make sure the list is sorted in opposite order next time.
@@ -147,16 +138,12 @@ const addAllSortingListeners = _ => {
       If sortedBy.description is `true`, that means we need to sort the list in descending order now.
       Otherwise, sort the list in ascending order.
     */
-    if (sortedBy.description) {
-      violationsList.sort(function(a,b) {
-        return b.description.localeCompare(a.description);
-      });
-    }
-    else {
-      violationsList.sort(function(a,b) {
-        return a.description.localeCompare(b.description);
-      });
-    }
+
+    let factor = sortedBy.description ? -1 : 1;
+
+    violationsList.sort(function(a,b) {
+      return b.description.localeCompare(a.description) * factor;
+    });
 
     /*
       Toggle the flag sortedBy.description to make sure the list is sorted in opposite order next time.
