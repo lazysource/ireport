@@ -55,11 +55,6 @@ app.on('activate', () => {
   }
 });
 
-// storage.clear((error) => {
-//   if (error)
-//     throw error;
-// });
-
 /*
   Reads file from the path given, throws error if there is any, while reading the file.
   Parses the data read from the file and converts it into JSON
