@@ -7,6 +7,9 @@ const fs = require('fs');
 const xml2js = require('xml2js');
 const storage = require('electron-json-storage');
 
+let Project = require('./models/project.js');
+let parser = new xml2js.Parser();
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -52,7 +55,10 @@ app.on('activate', () => {
   }
 });
 
-let parser = new xml2js.Parser();
+// storage.clear((error) => {
+//   if (error)
+//     throw error;
+// });
 
 /*
   Reads file from the path given, throws error if there is any, while reading the file.
@@ -94,6 +100,28 @@ exports.chooseFile = (callback) => {
       if (error)
         throw error;
     });
+
+    // store this file (project report) in local storage for recentlyOpenedFiles
+    storage.get('recentlyOpenedFiles', (error, data) => {
+      if (error)
+        throw error;
+
+      console.log(data);
+      let previousData = data.files;
+      if (!previousData)
+        previousData = [];
+      previousData.push(new Project('name', fileSelected[0]));
+      storage.set('recentlyOpenedFiles', { files: previousData }, (error) => {
+        if (error)
+          throw error;
+
+        storage.get('recentlyOpenedFiles', (error, data) => {
+          if (error)
+            throw error;
+          console.log(data);
+        });
+      });
+    });
   }
 
   return callback(fileSelected);
@@ -117,6 +145,7 @@ exports.openLastFile = (callback) => {
   storage.get('lastOpenedFile', (error, data) => {
     if (error)
       throw error;
+    console.log(data);
 
     if (data.path) {
       readAndParseFile(data.path[0], callback);

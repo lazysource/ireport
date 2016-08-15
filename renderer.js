@@ -187,7 +187,6 @@ const getAllViolations = _ => {
   return violationsList;
 }
 
-
 /*
   This method returns the completely built Violations Table from the Violations List
   passed to it. This method has been abstracted out in order to keep the view logic 
