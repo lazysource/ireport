@@ -105,7 +105,24 @@ exports.chooseFile = (callback) => {
       let previousData = data.files;
       if (!previousData)
         previousData = [];
-      previousData.push(new Project('name', fileSelected[0]));
+
+      // Search in previous data if an entry for same report path exists or not
+      // If there is such an entry, update the lastOpenedAt parameter with current timestamp
+      let alreadyExists = false;
+      for (let i = 0; i < previousData.length; i++) {
+        if (previousData[i].path == fileSelected) {
+          previousData[i].lastOpenedAt = Date.now();
+          alreadyExists = true;
+          break;
+        }
+      }
+
+      // If there was no entry for same report path already, add a new one
+      if (!alreadyExists) {
+        previousData.push(new Project('name', fileSelected[0]));
+      }
+
+      // Save updated data in local storage
       storage.set('recentlyOpenedFiles', { files: previousData }, (error) => {
         if (error)
           throw error;
@@ -140,7 +157,6 @@ exports.openLastFile = (callback) => {
   storage.get('lastOpenedFile', (error, data) => {
     if (error)
       throw error;
-    console.log(data);
 
     if (data.path) {
       readAndParseFile(data.path[0], callback);
