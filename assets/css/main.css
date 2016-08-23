@@ -66,6 +66,7 @@ body {
 th {
   text-align: left;
   min-width: 100px;
+  cursor: pointer;
 }
 
 #error-message-container #error-message table {
