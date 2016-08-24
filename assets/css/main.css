@@ -21,7 +21,7 @@ body {
   background: #e5e5e5;
   flex: 0 0 200px;
   color: #282A36;
-  box-shadow: inset -10px 0px 29px -10px black;
+  box-shadow: inset -10px 0px 29px -10px #9f9f9f;
 }
 
 .main-panel {
@@ -44,24 +44,13 @@ body {
 
 .file-path, .choose-file{
   margin: 5px;
-  min-width: 150px;
-  width: 20%;
+  min-width: 160px;
 }
 
 .meta-data {
   margin: 5px;
   min-width: 200px;
   width: 50%;
-}
-
-#chooseFile{
-  width: 150px;
-  height: 30px;
-  color: #fff;
-  background: #bd93f9;
-  border: none;
-  cursor: pointer;
-  font-family: monospace;
 }
 
 th {
