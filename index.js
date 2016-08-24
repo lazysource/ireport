@@ -7,6 +7,9 @@ const fs = require('fs');
 const xml2js = require('xml2js');
 const storage = require('electron-json-storage');
 
+let Project = require('./models/project.js');
+let parser = new xml2js.Parser();
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -52,8 +55,6 @@ app.on('activate', () => {
   }
 });
 
-let parser = new xml2js.Parser();
-
 /*
   Reads file from the path given, throws error if there is any, while reading the file.
   Parses the data read from the file and converts it into JSON
@@ -93,6 +94,45 @@ exports.chooseFile = (callback) => {
     storage.set('lastOpenedFile', { path: fileSelected }, (error) => {
       if (error)
         throw error;
+    });
+
+    // store this file (project report) in local storage for recentlyOpenedFiles
+    storage.get('recentlyOpenedFiles', (error, data) => {
+      if (error)
+        throw error;
+
+      console.log(data);
+      let previousData = data.files;
+      if (!previousData)
+        previousData = [];
+
+      // Search in previous data if an entry for same report path exists or not
+      // If there is such an entry, update the lastOpenedAt parameter with current timestamp
+      let alreadyExists = false;
+      for (let i = 0; i < previousData.length; i++) {
+        if (previousData[i].path == fileSelected) {
+          previousData[i].lastOpenedAt = Date.now();
+          alreadyExists = true;
+          break;
+        }
+      }
+
+      // If there was no entry for same report path already, add a new one
+      if (!alreadyExists) {
+        previousData.push(new Project('name', fileSelected[0]));
+      }
+
+      // Save updated data in local storage
+      storage.set('recentlyOpenedFiles', { files: previousData }, (error) => {
+        if (error)
+          throw error;
+
+        storage.get('recentlyOpenedFiles', (error, data) => {
+          if (error)
+            throw error;
+          console.log(data);
+        });
+      });
     });
   }
 
