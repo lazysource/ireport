@@ -1,14 +1,12 @@
 html, body{
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: monospace;
   font-size: 16px;
-  color: #E9EFEC;
-  background: #282A36;
 }
 
 .app {
@@ -21,24 +19,27 @@ body {
 .side-panel {
   overflow-y: auto;
   background: #e5e5e5;
-  width: 200px;
   flex: 0 0 200px;
   color: #282A36;
   box-shadow: inset -10px 0px 29px -10px black;
 }
 
 .main-panel {
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
   padding: 5px;
   word-break: break-all;
+  width: 100%;
 }
 
-.navbar {
+.meta {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
+  min-height: 70px;
 }
 
 .file-path, .choose-file{
@@ -64,27 +65,16 @@ body {
 }
 
 th {
+  border: none;
   text-align: left;
   min-width: 100px;
   cursor: pointer;
 }
 
-#error-message-container #error-message table {
-  border-collapse:collapse;
+#error-message-container #error-message {
+  margin: 10px;
 }
 
 #error-message-container #error-message table td {
   word-break: break-all;
-}
-
-#error-message-container #error-message .error-class {
-  width: 20%;
-}
-
-#error-message-container #error-message .error-beginline {
-  width: 5%;
-}
-
-#error-message-container #error-message .error-desc {
-  width: 75%;
 }

@@ -195,7 +195,7 @@ const getAllViolations = _ => {
 const getViolationsTable = (violationsList) => {
     let html = '';
     html += '<div id="error-message">';
-    html += '<table border="1" cellspacing="0" cellpadding="0"><tr><th id="className">ClassName</th><th id="lineNumber">Line Number</th><th id="description">Error Message</th></tr>';
+    html += '<table class="striped z-depth-3" border="1" cellspacing="0" cellpadding="0"><tr><th id="className">ClassName</th><th id="lineNumber">Line Number</th><th id="description">Error Message</th></tr>';
     
     for (let i=0;i<violationsList.length;i++) {
       let violation = violationsList[i];
