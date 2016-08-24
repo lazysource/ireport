@@ -5,8 +5,8 @@ html, body{
 }
 
 body {
-  font-family: monospace;
   font-size: 16px;
+  color: rgba(0,0,0,0.87);
 }
 
 .app {
@@ -18,10 +18,12 @@ body {
 
 .side-panel {
   overflow-y: auto;
-  background: #e5e5e5;
   flex: 0 0 200px;
-  color: #282A36;
-  box-shadow: inset -10px 0px 29px -10px #9f9f9f;
+  box-shadow: inset -10px 0px 6px -10px #9f9f9f;
+}
+
+.side--nav-list__items{
+  width: 200px;
 }
 
 .main-panel {
@@ -45,6 +47,7 @@ body {
 .file-path, .choose-file{
   margin: 5px;
   min-width: 160px;
+  color: rgba(0,0,0,0.87) !important;
 }
 
 .meta-data {
@@ -62,6 +65,7 @@ th {
 
 #error-message-container #error-message {
   margin: 10px;
+  font-family: monospace;
 }
 
 #error-message-container #error-message table td {
